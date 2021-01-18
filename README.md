@@ -1,29 +1,11 @@
 # hello
 
-## Project setup
+## main.js注册的过滤器，home.vue里定义的例子
+``` js
+   <div>
+     {{info.status && info.status == '1' ? '进行中' : info.modified_time |getFormalTime }}
+   </div>
+                              <!-- 如果用括号括起来，就不识别-->
+  <div>
+       {{info.status && info.status == '1' ? '进行中' : (info.modified_time |getFormalTime) }}
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Run your unit tests
-```
-npm run test:unit
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
