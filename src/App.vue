@@ -2,12 +2,44 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+      <div @click="toAbout">去about页面</div>
     </div>
     <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  beforeCreate() {
+    console.log("app-beforeCreate");
+    // console.log(this.$route);
+  },
+  created() {
+    console.log("app-created");
+  },
+  beforeMount() {
+    console.log("app-beforeMount");
+  },
+  mounted() {
+    console.log("app-mounted");
+  },
+  beforeDestroy() {
+    console.log("app-beforeDestroy");
+  },
+  destroyed() {
+    console.log("app-destroyed");
+  },
+  methods: {
+    toAbout() {
+      // about页面刷新会丢失params参数
+      this.$router.push({ name: "About", params: { id: 1 } });
+      // about页面刷新不会丢失query参数
+      // this.$router.push({name:'About',query:{'id':1}})
+      // params还是丢失
+      // this.$router.push({name:'About',query:{'id':1},params:{'par':'a'}})
+    },
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
