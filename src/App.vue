@@ -2,7 +2,6 @@
   <div id="app">
     <div id="nav">
       <router-link to="/">Home</router-link> |
-      <div @click="toAbout">去about页面</div>
     </div>
     <router-view />
   </div>
