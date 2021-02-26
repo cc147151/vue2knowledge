@@ -1,22 +1,39 @@
 <template>
-  <div class="about">
-    <h1>父子mixins生命周期</h1>
-    <h1 @click="toWhere">filter的坑</h1>
-   <van-button type="primary">主要按钮</van-button>
+  <div class="index">
+    <van-cell-group :border="false">
+      <van-cell
+        is-link
+        v-for="(item, index) in dataArr"
+        :key="index"
+        :to="item.path"
+      >
+        <!-- 使用 title 插槽来自定义标题 -->
+        <template #title>
+          <span class="custom-title">{{ index + 1 }}.</span>
+          <span class="ml">{{ item.title }}</span>
+        </template>
+      </van-cell>
+    </van-cell-group>
   </div>
 </template>
 <script>
-import Vue from 'vue';
-import { Button } from 'vant';
-Vue.use(Button);
+import dataArr from "@/utils/index"
+import Vue from "vue"
+import { Cell, CellGroup } from "vant"
+Vue.use(Cell)
+Vue.use(CellGroup)
 export default {
-  created() {
-    console.log(this.$route);
+  data() {
+    return {
+      dataArr
+    }
   },
-  methods:{
-      toWhere(){
-          this.$router.push('/filter')
-      }
-  }
-};
+  created() {},
+  methods: {}
+}
 </script>
+<style>
+.ml {
+  margin-left: 15px;
+}
+</style>

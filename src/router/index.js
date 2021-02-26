@@ -1,11 +1,11 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-const Index = () => import("../views/index.vue");
-const Filter = () => import("../views/filter/index.vue");
-const Life = () => import("../views/life/index.vue");
-const Render = () => import("../views/render/index.vue");
-Vue.use(VueRouter);
-
+import Vue from "vue"
+import VueRouter from "vue-router"
+const Index = () => import("../views")
+const Filter = () => import("../views/filter")
+const Life = () => import("../views/life")
+const Render = () => import("../views/render")
+const Computed = () => import("../views/computed")
+Vue.use(VueRouter)
 const routes = [
   {
     path: "/",
@@ -15,24 +15,29 @@ const routes = [
   {
     path: "/filter",
     name: "Filter",
-    component: Filter,
+    component: Filter
   },
   {
     path: "/life",
     name: "Life",
-    component: Life,
+    component: Life
   },
   {
     path: "/render",
     name: "Render",
-    component: Render,
+    component: Render
   },
-];
+  {
+    path: "/computed",
+    name: "Computed",
+    component:Computed
+  }
+]
 
 const router = new VueRouter({
   mode: "hash",
   base: process.env.BASE_URL,
-  routes,
-});
+  routes
+})
 
-export default router;
+export default router
