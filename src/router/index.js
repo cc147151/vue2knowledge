@@ -5,6 +5,8 @@ const Filter = () => import("../views/filter")
 const Life = () => import("../views/life")
 const Render = () => import("../views/render")
 const Computed = () => import("../views/computed")
+const Style = () => import("../views/computed/secondaryRouting/style.vue")
+const Assembly = () => import("../views/computed/secondaryRouting/assembly.vue")
 Vue.use(VueRouter)
 const routes = [
   {
@@ -30,7 +32,11 @@ const routes = [
   {
     path: "/computed",
     name: "Computed",
-    component:Computed
+    component: Computed,
+    children: [
+      { path: "/", component: Style },
+      { path: "assembly", component: Assembly }
+    ]
   }
 ]
 

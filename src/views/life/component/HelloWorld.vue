@@ -10,25 +10,25 @@ export default {
   props: {
     msg: String
   },
-    beforeCreate() {
-    console.log("son-beforeCreate");
+  beforeCreate() {
+    console.log("son-beforeCreate")
   },
   created() {
-    console.log("son-created");
+    console.log("son-created")
   },
   beforeMount() {
-    console.log("son-beforeMount");
+    console.log("son-beforeMount")
   },
   mounted() {
-    console.log("son-mounted");
+    console.log("son-mounted")
   },
   beforeDestroy() {
     console.log("son-beforeDestroy")
   },
   destroyed() {
-    console.log("son-destroyed");
-  },
-};
+    console.log("son-destroyed")
+  }
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

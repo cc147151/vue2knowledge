@@ -6,7 +6,7 @@
 
       <!-- 如果用括号括起来，过滤器就不识别-->
       <div>
-        {{ info.status == "1" ? "进行中" : info.modified_time | getFormalTime }}
+        {{ info.status == "1" ? "进行中" : (info.modified_time | getFormalTime) }}
       </div>
       <div>
         <!-- 如果不加括号，会把进行中也进行过滤 status==1时候-->

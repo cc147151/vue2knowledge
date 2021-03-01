@@ -5,7 +5,7 @@
         is-link
         v-for="(item, index) in dataArr"
         :key="index"
-        :to="item.path"
+        :to="item.name"
       >
         <!-- 使用 title 插槽来自定义标题 -->
         <template #title>
