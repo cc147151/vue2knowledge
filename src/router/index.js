@@ -6,9 +6,10 @@ const Life = () => import("../views/life")
 const Render = () => import("../views/render")
 const Computed = () => import("../views/computed")
 const Style = () => import("../views/computed/secondaryRouting/style.vue")
-const subComponents = () =>
+const SubComponents = () =>
   import("../views/computed/secondaryRouting/subComponents.vue")
-const ifAndShow = () => import("../views/ifAndShow")
+const IfAndShow = () => import("../views/ifAndShow")
+const Assembly = () => import("../views/assembly")
 Vue.use(VueRouter)
 const routes = [
   {
@@ -37,14 +38,19 @@ const routes = [
     component: Computed,
     children: [
       { path: "/", component: Style },
-      { path: "subComponents", component: subComponents }
+      { path: "subComponents", component: SubComponents }
     ]
   },
   {
     path: "/ifAndShow",
     name: "IfAndShow",
-    component: ifAndShow
+    component: IfAndShow
   },
+  {
+    path: "/assembly",
+    name: "Assembly",
+    component: Assembly
+  }
 ]
 
 const router = new VueRouter({

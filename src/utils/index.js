@@ -4,7 +4,8 @@ const dataArr = [
   { title: "父子mixins生命周期", name: "Life" },
   { title: "render渲染", name: "Render" },
   { title: "computed", name: "Computed" },
-  { title: "v-if and v-show", name: "IfAndShow" }
+  { title: "v-if and v-show", name: "IfAndShow" },
+  { title: "深入组件", name: "Assembly" }
 ]
 // console.log(router.options.routes)
 // router.options.routes

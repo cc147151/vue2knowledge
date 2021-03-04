@@ -43,7 +43,6 @@
 import Vue from "vue"
 import { Button } from "vant"
 Vue.use(Button)
-import Nav from "@/components/nav"
 // 测试 视图渲染的几种情况 页面组件和子组件
 export default {
   data() {
@@ -56,7 +55,6 @@ export default {
     }
   },
   components: {
-    Nav
   },
   created() {
     console.log(this.$route)

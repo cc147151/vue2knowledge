@@ -36,7 +36,6 @@
   </div>
 </template>
 <script>
-import Nav from "@/components/nav"
 import Vue from "vue"
 import { Button } from "vant"
 Vue.use(Button)
@@ -47,9 +46,6 @@ export default {
       name: "",
       message: ""
     }
-  },
-  components: {
-    Nav
   },
   methods: {
     oneFun() {

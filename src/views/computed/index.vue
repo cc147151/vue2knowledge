@@ -1,29 +1,31 @@
 <template>
   <div class="computedBox">
-    <Nav @leftEvent="myBack"/>
+    <Nav @leftEvent="myBack" />
     <router-view></router-view>
-    <div class="fix" @click="e => toSecond(e)">
+    <div class="fix" @click="e => toSecond(e, '哇哈哈')">
       <p path="/computed" data-hhh="hhhhhhh">1.于样式结合</p>
       <p path="/computed/subComponents">2.于子组件结合</p>
     </div>
   </div>
 </template>
 <script>
-import Nav from "@/components/nav"
+
 export default {
   data() {
     return {}
   },
   components: {
-    Nav
+
   },
   methods: {
-    toSecond(e) {
+    toSecond(e, ...arg) {
+      console.log(arg)
       console.log(e.target.dataset.hhh)
       console.log(e.target.getAttribute("path"))
-      this.$router.push(e.target.getAttribute("path"))
+      const path = e.target.getAttribute("path")
+      path && this.$router.push(path)
     },
-    myBack(){
+    myBack() {
       history.go(-1)
     }
   }

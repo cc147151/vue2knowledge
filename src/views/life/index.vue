@@ -7,7 +7,6 @@
 <script>
 // 测试 视图渲染的几种情况 页面组件和子组件
 import HelloWorld from "./component/HelloWorld"
-import Nav from "@/components/nav"
 import test from "@/mixins/test"
 export default {
   data() {
@@ -16,8 +15,7 @@ export default {
     }
   },
   components: {
-    HelloWorld,
-    Nav
+    HelloWorld
   },
   methods: {},
   mixins: [test],

@@ -17,7 +17,6 @@
 </template>
 
 <script>
-import Nav from "@/components/nav"
 // @ is an alias to /src
 export default {
   name: "Home",
@@ -28,9 +27,6 @@ export default {
         modified_time: 1610951421
       }
     }
-  },
-  components: {
-    Nav
   }
 }
 </script>
