@@ -5,6 +5,8 @@ import store from "./store"
 import upperFirst from "lodash/upperFirst"
 import camelCase from "lodash/camelCase"
 Vue.config.productionTip = false
+import { Button } from "vant"
+Vue.use(Button)
 function timestampToTime(timestamp) {
   let date = new Date(timestamp) //时间戳为10位需*1000，时间戳为13位的话不需乘1000.传进来之前做处理
   let y = date.getFullYear()
