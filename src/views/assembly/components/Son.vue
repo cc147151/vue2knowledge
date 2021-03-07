@@ -58,7 +58,7 @@ export default {
       console.log(this._events, "_events")
       console.log(this.$attrs, "Son未在props注册的属性，可以接收到")
       console.log(this.$listeners, "Sonlisteners")
-      console.log(this.sonAge)
+      console.log(this.$root.root)
     },
     giveSunFun(type, data) {
       this[type] = data

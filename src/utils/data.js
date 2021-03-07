@@ -5,7 +5,9 @@ const dataArr = [
   { title: "render渲染", name: "Render" },
   { title: "computed", name: "Computed" },
   { title: "v-if and v-show", name: "IfAndShow" },
-  { title: "深入组件", name: "Assembly" }
+  { title: "深入组件", name: "Assembly" },
+  { title: "插槽", name: "Slot" },
+  { title: "边界情况", name: "Boundary" }
 ]
 // console.log(router.options.routes)
 // router.options.routes

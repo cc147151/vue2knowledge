@@ -77,5 +77,11 @@ requireComponent.keys().forEach(fileName => {
 new Vue({
   router,
   store,
+  data(){
+    return{
+      root:'root'
+    }
+  },
+  testRoot:{test:'ok'},
   render: h => h(App)
 }).$mount("#app")

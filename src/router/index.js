@@ -10,6 +10,8 @@ const SubComponents = () =>
   import("../views/computed/secondaryRouting/subComponents.vue")
 const IfAndShow = () => import("../views/ifAndShow")
 const Assembly = () => import("../views/assembly")
+const Slot = () => import("../views/slot")
+const Boundary = () => import("../views/boundary")
 Vue.use(VueRouter)
 const routes = [
   {
@@ -50,6 +52,15 @@ const routes = [
     path: "/assembly",
     name: "Assembly",
     component: Assembly
+  },
+  {
+    path: '/slot',
+    name: 'Slot',
+    component: Slot
+  },{
+    path:'/boundary',
+    name:'Boundary',
+    component:Boundary
   }
 ]
 

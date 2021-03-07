@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import dataArr from "@/utils/index"
+import dataArr from "@/utils/data"
 import Vue from "vue"
 import { Cell, CellGroup } from "vant"
 Vue.use(Cell)
