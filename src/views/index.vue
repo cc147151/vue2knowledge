@@ -14,6 +14,7 @@
         </template>
       </van-cell>
     </van-cell-group>
+    
   </div>
 </template>
 <script>

@@ -29,7 +29,8 @@
     </p>
     <h1>写在子组件标签上</h1>
     <p>会在子组件根元素上添加该类名或者id名</p>
-    <testComponent class="component1" name="nonono" id="o" />
+    <button @click="changeName">修改testComponent的值</button>
+    <testComponent class="component1" :person="person" id="o" />
   </div>
 </template>
 <script>
@@ -40,7 +41,8 @@ export default {
       hang: { "font-size": "24px", color: "red", fontWeight: 800 },
       styleArrObj: { color: "green" },
       comSwitchStyle: 1,
-      classA1: true
+      classA1: true,
+      person:{name:'sss',age:'11'}
     }
   },
   computed: {
@@ -63,7 +65,12 @@ export default {
   },
   components: {
     testComponent
-  }
+  },
+  methods: {
+    changeName(){
+      this.person={name:'sss',age:'99'}
+    }
+  },
 }
 </script>
 <style lang="scss" scoped>

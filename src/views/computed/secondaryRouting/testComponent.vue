@@ -11,15 +11,15 @@ export default {
     return {}
   },
   props: {
-    name: {
-      type: String
+    person: {
+      type: Object
     }
   },
   computed: {
     //   如果template里没用到，自然不会执行
     comName() {
         console.log('aa')
-      return this.name
+      return this.person.name
     }
   }
 }

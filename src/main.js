@@ -82,6 +82,9 @@ new Vue({
       root:'root'
     }
   },
+  mounted(){
+    console.log(this.$options.testRoot)
+  },
   testRoot:{test:'ok'},
   render: h => h(App)
 }).$mount("#app")
