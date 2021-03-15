@@ -3,10 +3,10 @@
     <Nav />
     <p>1.默认插槽</p>
     <SlotCom :arr="slotArr">
-      <p>name为default得时候可以直接写，</p>
-      <template v-slot:default>
+      <template v-slot:default="{filterArr}">
         <div>
           默认值也可以tmplate，使用v-slot:default,会直接替换掉没有用template包裹的，如果用template包裹，没有指明v-slot,则一起保留
+          <p>默认值用值得时候，必须要用template包裹{{filterArr}}</p>
         </div>
       </template>
       <template #eat="{filterArr}">

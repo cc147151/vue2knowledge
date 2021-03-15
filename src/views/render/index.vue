@@ -65,6 +65,7 @@ export default {
     },1000)
     setTimeout(()=>{
       this.obj.a=888
+    //   利用了this.obj.a会更新视图，所以b也显示到页面上了
       this.obj.b=777
     },2000)
   },

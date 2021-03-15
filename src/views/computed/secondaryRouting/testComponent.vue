@@ -1,8 +1,6 @@
 <template>
   <div class="assembly">
-    <div class="ass">
-        {{ comName }}
-    </div>
+    <div class="ass">{{ comName }}{{ cc }}</div>
   </div>
 </template>
 <script>
@@ -18,15 +16,18 @@ export default {
   computed: {
     //   如果template里没用到，自然不会执行
     comName() {
-        console.log('aa')
-      return this.person.name
+      console.log("aa")
+      return this.person && this.person.name
+    },
+    cc() {
+      console.log("ccccc")
+      return ""
     }
   }
 }
 </script>
 <style lang="scss" scoped>
 .assembly {
-    background-color: aqua;
+  background-color: aqua;
 }
 </style>
-

@@ -1,7 +1,7 @@
 <template>
   <div class="slot">
     <!-- default得时候可以省略 -->
-    <slot name="default">
+    <slot name="default" :filterArr="filterArr">
       
     </slot>
    <!-- <div v-for="(item,index) of filterArr" :key="index"> -->
