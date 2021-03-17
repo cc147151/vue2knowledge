@@ -36,7 +36,7 @@
       <p>
         5.可以利用this.$forceUpdate()迫使视图重新渲染
       </p>
-      {{obj.a}}{{obj.b}}
+      {{ obj.a }}{{ obj.b }}
     </div>
   </div>
 </template>
@@ -53,21 +53,20 @@ export default {
         name: "哇哈哈",
         age: "99"
       },
-      obj:{}
+      obj: {}
     }
   },
-  components: {
-  },
+  components: {},
   created() {
     console.log(this.$route),
-    setTimeout(()=>{
-      this.obj={a:999}
-    },1000)
-    setTimeout(()=>{
-      this.obj.a=888
-    //   利用了this.obj.a会更新视图，所以b也显示到页面上了
-      this.obj.b=777
-    },2000)
+      setTimeout(() => {
+        this.obj = { a: 999 }
+      }, 1000)
+    setTimeout(() => {
+      this.obj.a = 888
+      //   利用了this.obj.a会更新视图，所以b也显示到页面上了
+      this.obj.b = 777
+    }, 2000)
   },
   methods: {
     logFun() {

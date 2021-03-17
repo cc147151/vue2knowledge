@@ -1,6 +1,6 @@
 <template>
   <div class="assembly">
-    <div class="ass">{{ comName }}{{ cc }}</div>
+    <!-- <div class="ass">{{ comName }}{{ cc }}</div> -->
   </div>
 </template>
 <script>
@@ -23,6 +23,9 @@ export default {
       console.log("ccccc")
       return ""
     }
+  },
+  created(){
+      console.log('声明test')
   }
 }
 </script>

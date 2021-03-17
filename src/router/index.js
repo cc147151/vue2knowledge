@@ -12,6 +12,10 @@ const IfAndShow = () => import("../views/ifAndShow")
 const Assembly = () => import("../views/assembly")
 const Slot = () => import("../views/slot")
 const Boundary = () => import("../views/boundary")
+const Watch = () => import("../views/watch")
+const RouteAndRouter = () => import("../views/routeAndRouter")
+const One = () => import("../views/routeAndRouter/secondRouter/one.vue")
+const Two = () => import("../views/routeAndRouter/secondRouter/two.vue")
 Vue.use(VueRouter)
 const routes = [
   {
@@ -39,9 +43,15 @@ const routes = [
     name: "Computed",
     component: Computed,
     children: [
-      { path: "/", component: Style },
-      { path: "subComponents", component: SubComponents }
+      { path: "", component: Style },
+      { path: "style", name: "Style", component: Style },
+      { path: "subComponents", name: "SubComponents", component: SubComponents }
     ]
+  },
+  {
+    path: "/watch",
+    name: "Watch",
+    component: Watch
   },
   {
     path: "/ifAndShow",
@@ -54,13 +64,28 @@ const routes = [
     component: Assembly
   },
   {
-    path: '/slot',
-    name: 'Slot',
+    path: "/slot",
+    name: "Slot",
     component: Slot
-  },{
-    path:'/boundary',
-    name:'Boundary',
-    component:Boundary
+  },
+  {
+    path: "/boundary",
+    name: "Boundary",
+    component: Boundary
+  },
+  {
+    path: "/routeAndRouter",
+    name: "RouteAndRouter",
+    component: RouteAndRouter,
+    children: [
+      {
+        path: "one/:id",
+        name: "One",
+        component: One,
+        props: true
+      },
+      { path: "two", name: "Two", component: Two,props:(route)=>({query:route.query,params:route.params}) }
+    ]
   }
 ]
 

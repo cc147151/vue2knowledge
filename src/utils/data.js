@@ -4,10 +4,12 @@ const dataArr = [
   { title: "父子mixins生命周期", name: "Life" },
   { title: "render渲染", name: "Render" },
   { title: "computed", name: "Computed" },
+  { title: "watch", name: "Watch" },
   { title: "v-if and v-show", name: "IfAndShow" },
   { title: "深入组件", name: "Assembly" },
   { title: "插槽", name: "Slot" },
-  { title: "边界情况", name: "Boundary" }
+  { title: "边界情况", name: "Boundary" },
+  { title: "vue-router", name: "RouteAndRouter/one/1" },
 ]
 // console.log(router.options.routes)
 // router.options.routes

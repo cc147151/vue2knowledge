@@ -27,14 +27,10 @@
     <p :class="classObj">
       3.computer结合
     </p>
-    <h1>写在子组件标签上</h1>
-    <p>会在子组件根元素上添加该类名或者id名</p>
-    <button @click="changeName">修改testComponent的值</button>
-    <testComponent class="component1" :person="person" id="o" />
+    <h1>写在子组件标签上会在子组件根元素上添加该类名或者id名</h1>
   </div>
 </template>
 <script>
-import testComponent from "./testComponent"
 export default {
   data() {
     return {
@@ -42,7 +38,7 @@ export default {
       styleArrObj: { color: "green" },
       comSwitchStyle: 1,
       classA1: true,
-      person:{name:'sss',age:'11'}
+      person: { name: "sss", age: "11" }
     }
   },
   computed: {
@@ -62,15 +58,7 @@ export default {
         a2: true
       }
     }
-  },
-  components: {
-    testComponent
-  },
-  methods: {
-    changeName(){
-      this.person={name:'sss',age:'99'}
-    }
-  },
+  }
 }
 </script>
 <style lang="scss" scoped>
