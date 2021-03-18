@@ -10,6 +10,9 @@
       <div>
         <p @click="toTwo">去two路由</p>
       </div>
+      <div class="h500" @click="toRender">
+        测试滚动
+      </div>
     </div>
     <div class="right">
       <router-view></router-view>
@@ -38,6 +41,9 @@ export default {
     toTwo() {
       this.$router.push({ path: "/routeAndRouter/two", query: { que: "qqq" } })
       //   this.$router.push({ name: "Two", params: { ppp: "ppp" } })
+    },
+    toRender() {
+      this.$router.push({path:"/render#t1",query:{id:'ttt'}})
     }
   }
 }
@@ -48,6 +54,10 @@ export default {
   height: 100vh;
   .left {
     width: 200px;
+    .h500 {
+      height: 900px;
+      background-color: blue;
+    }
   }
 }
 </style>

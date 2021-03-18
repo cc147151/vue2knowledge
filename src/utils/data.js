@@ -10,6 +10,7 @@ const dataArr = [
   { title: "插槽", name: "Slot" },
   { title: "边界情况", name: "Boundary" },
   { title: "vue-router", name: "RouteAndRouter/one/1" },
+  { title: "scroll-router", name: "ScrollRouter/anchor" }
 ]
 // console.log(router.options.routes)
 // router.options.routes

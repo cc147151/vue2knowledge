@@ -16,6 +16,9 @@ const Watch = () => import("../views/watch")
 const RouteAndRouter = () => import("../views/routeAndRouter")
 const One = () => import("../views/routeAndRouter/secondRouter/one.vue")
 const Two = () => import("../views/routeAndRouter/secondRouter/two.vue")
+const ScrollRouter = () => import("../views/scrollRouter")
+const Anchor = () => import("../views/scrollRouter/anchor")
+
 Vue.use(VueRouter)
 const routes = [
   {
@@ -84,15 +87,51 @@ const routes = [
         component: One,
         props: true
       },
-      { path: "two", name: "Two", component: Two,props:(route)=>({query:route.query,params:route.params}) }
+      {
+        path: "two",
+        name: "Two",
+        component: Two,
+        props: route => ({ query: route.query, params: route.params })
+      }
+    ]
+  },
+  {
+    path: "/scrollRouter",
+    name: "ScrollRouter",
+    component: ScrollRouter,
+    children: [
+      {
+        path: "anchor",
+        component: Anchor
+      }
     ]
   }
 ]
-
+const fun = function(savedPosition, to) {
+  if (savedPosition) {
+    return savedPosition
+  } else {
+      console.log(to.hash)
+    if (/#\w/.test(to.hash)) {
+        console.log('dddd')
+      return {
+        selector: to.hash
+      }
+    }   
+  }
+}
 const router = new VueRouter({
   mode: "hash",
   base: process.env.BASE_URL,
-  routes
+  routes,
+  scrollBehavior(to, from, savedPosition) {
+    //   one:id 也能监听到变化
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(fun(savedPosition, to))
+      }, 0)
+    })
+  }
 })
 
 export default router

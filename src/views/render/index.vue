@@ -38,6 +38,12 @@
       </p>
       {{ obj.a }}{{ obj.b }}
     </div>
+    <div class="h500">
+      测试滚动
+    </div>
+    <div id="t1">
+        锚点
+    </div>
   </div>
 </template>
 <script>
@@ -85,5 +91,13 @@ export default {
 <style>
 .render {
   padding: 0 20px;
+}
+.h500 {
+  height: 800px;
+  background-color: red;
+}
+#t1 {
+    height: 200px;
+    background-color: pink;
 }
 </style>
