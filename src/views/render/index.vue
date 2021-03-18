@@ -37,7 +37,13 @@
       <p>
         5.可以利用this.$forceUpdate()迫使视图重新渲染
       </p>
-      {{obj.a}}{{obj.b}}
+      {{ obj.a }}{{ obj.b }}
+    </div>
+    <div class="h500">
+      测试滚动
+    </div>
+    <div id="t1">
+        锚点
     </div>
   </div>
 </template>
@@ -58,18 +64,18 @@ export default {
       proObj:{}
     }
   },
-  components: {
-  },
+  components: {},
   created() {
     console.log(this.$route),
     this.proObj=this.$route.query.ttt
     setTimeout(()=>{
       this.obj={a:999}
     },1000)
-    setTimeout(()=>{
-      this.obj.a=888
-      this.obj.b=777
-    },2000)
+    setTimeout(() => {
+      this.obj.a = 888
+      //   利用了this.obj.a会更新视图，所以b也显示到页面上了
+      this.obj.b = 777
+    }, 2000)
   },
   methods: {
     logFun() {
@@ -91,5 +97,13 @@ export default {
 <style>
 .render {
   padding: 0 20px;
+}
+.h500 {
+  height: 800px;
+  background-color: red;
+}
+#t1 {
+    height: 200px;
+    background-color: pink;
 }
 </style>

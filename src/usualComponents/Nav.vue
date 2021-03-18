@@ -28,8 +28,14 @@ export default {
     onClickLeft() {
       //   this.$emit('')
       //   父组件给子组件传递的事件 监听的函数 绑定在子组件的_events里
-      console.log(this._events)
-      this._events.leftEvent ? this.$emit("leftEvent") : this.$router.back()
+      console.log(this.$listeners)
+      if (this._events.leftEvent) {
+        console.log(this._events)
+        this.$emit("leftEvent")
+        return
+      }
+      console.log('back')
+      this.$router.back()
     }
   }
 }
