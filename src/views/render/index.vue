@@ -1,6 +1,7 @@
 <template>
   <div class="renderBox">
     <Nav />
+    <button @click="testObjFun">点我测试上个vue对象</button>
     <div class="render">
       <h3>视图是否重新进行渲染，以函数调用方法测试{{ logFun() }}</h3>
       <p>
@@ -53,13 +54,15 @@ export default {
         name: "哇哈哈",
         age: "99"
       },
-      obj:{}
+      obj:{},
+      proObj:{}
     }
   },
   components: {
   },
   created() {
     console.log(this.$route),
+    this.proObj=this.$route.query.ttt
     setTimeout(()=>{
       this.obj={a:999}
     },1000)
@@ -78,6 +81,9 @@ export default {
     },
     leftEve() {
       console.log("l")
+    },
+    testObjFun(){
+      this.proObj.test()
     }
   }
 }
