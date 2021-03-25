@@ -1,14 +1,18 @@
 <template>
-  <div class="homeBox">
+  <div class="">
     <Nav />
+    <button @click="testTime">点我</button>
+    <button @click="test">测试</button>
+    <div class="home" @click="toOther">
     <div v-pre>如果用括号括起来，过滤器就不识别(v-pre指令可以禁止vue编译)<div>{{ info.status == "1" ? "进行中" : (info.modified_time | getFormalTime) }}</div></div>
     <p>过滤器filter,当视图每次更新时候，filter就会执行,所以和普通方法并没有性能上的差别</p>
     <p>解决办法可以直接写成方法来使用或者使用$options.filters.filterName()当作方法来调用</p>
     <div class="home">
       <img alt="Vue logo" src="@/assets/logo.png" />
-
+      {{ info.status }}
       <!-- 如果用括号括起来，过滤器就不识别-->
       <div>
+        {{ info.status == "1" ? "进行中" : info.modified_time | getFormalTime }}
         <!-- {{ info.status == "1" ? "进行中" : (info.modified_time | getFormalTime) }} -->
       </div>
       <div>
@@ -17,6 +21,7 @@
       </div>
     </div>
     <p @click="test='filter执行了'">点我修改test值，测试filter{{test}}</p>
+  </div>
   </div>
 </template>
 
@@ -27,12 +32,35 @@ export default {
   data() {
     return {
       info: {
-        status: "2",
+        status: "1",
         modified_time: 1610951421,
       },
-        test:'test'
-
     }
-  }
+  },
+  async created() {},
+  methods: {
+    pro() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          console.log("4s")
+          resolve("成功")
+        }, 4000)
+      })
+    },
+    toOther() {
+      this.$router.push({path:'/render',query:{ttt:this}})
+    },
+    async testTime() {
+      let res = await this.pro()
+      console.log("之后")
+      console.log(res)
+      this.info = { status: "2" }
+      console.log(this.info)
+    },
+    test(){
+      console.log('ttttt')
+      console.log(this.info.status)
+    }
+  },
 }
 </script>
