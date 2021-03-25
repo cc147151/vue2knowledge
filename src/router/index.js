@@ -18,7 +18,7 @@ const One = () => import("../views/routeAndRouter/secondRouter/one.vue")
 const Two = () => import("../views/routeAndRouter/secondRouter/two.vue")
 const ScrollRouter = () => import("../views/scrollRouter")
 const Anchor = () => import("../views/scrollRouter/anchor")
-
+const VuexPage = () => import("../views/vuex/index.vue")
 Vue.use(VueRouter)
 const routes = [
   {
@@ -105,19 +105,28 @@ const routes = [
         component: Anchor
       }
     ]
+  },
+  {
+    path: "/vuexPage",
+    name: "VuexPage",
+    component: VuexPage
   }
 ]
 const fun = function(savedPosition, to) {
   if (savedPosition) {
+    console.log(savedPosition)
     return savedPosition
   } else {
-      console.log(to.hash)
-    if (/#\w/.test(to.hash)) {
-        console.log('dddd')
+    console.log(to.hash)
+    if (/#[0-9a-zA-Z]+/.test(to.hash)) {
+      console.log("锚点")
       return {
         selector: to.hash
       }
-    }   
+    } else {
+      console.log("else")
+      return { y: 0 }
+    }
   }
 }
 const router = new VueRouter({
