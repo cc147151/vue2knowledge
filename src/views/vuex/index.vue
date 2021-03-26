@@ -99,10 +99,10 @@ export default {
     changeUser() {
       this.changeUserInfoType({ type: "age", value: "88" })
     },
-   async changeActions(){
-        let res = await this.userActions()
-        console.log(res)
-        console.log('actionEnd')
+    async changeActions() {
+      let res = await this.userActions()
+      console.log(res)
+      console.log("actionEnd")
     }
   }
 }

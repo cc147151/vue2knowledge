@@ -1,7 +1,6 @@
 <template>
   <div class="renderBox">
     <Nav />
-    <button @click="testObjFun">点我测试上个vue对象</button>
     <div class="render">
       <h3>视图是否重新进行渲染，以函数调用方法测试{{ logFun() }}</h3>
       <p>
@@ -23,7 +22,7 @@
       <p>
         3.
         <span
-          >如果template用到了data对象user的age，但是我修改操作的是整个user对象（包括增删改，或者修改的跟原来一样），则重新渲染了</span
+          >如果template用到了对象user的age，但是我修改操作的是整个user对象（包括增删改，或者修改的跟原来一样），则重新渲染了</span
         >
       </p>
       <van-button
@@ -37,13 +36,16 @@
       <p>
         5.可以利用this.$forceUpdate()迫使视图重新渲染
       </p>
-      {{ obj.a }}{{ obj.b }}
+      {{ obj }}
+    </div>
+    <div @click="changeObj">
+      测试obj
     </div>
     <div class="h500">
       测试滚动
     </div>
     <div id="t1">
-        锚点
+      锚点
     </div>
   </div>
 </template>
@@ -60,22 +62,15 @@ export default {
         name: "哇哈哈",
         age: "99"
       },
-      obj:{},
-      proObj:{}
+      obj: {},
+      proObj: {}
     }
   },
   components: {},
   created() {
-    console.log(this.$route),
-    this.proObj=this.$route.query.ttt
-    setTimeout(()=>{
-      this.obj={a:999}
-    },1000)
-    setTimeout(() => {
-      this.obj.a = 888
-      //   利用了this.obj.a会更新视图，所以b也显示到页面上了
-      this.obj.b = 777
-    }, 2000)
+    console.log(this.$route)
+    // created里同步代码还可以更新视图
+    // this.obj.a='a'
   },
   methods: {
     logFun() {
@@ -83,13 +78,10 @@ export default {
     },
     changeName() {
       this.name = "0.01"
+    },
+    changeObj() {
+      this.obj.b = "b"
       //   this.$forceUpdate()
-    },
-    leftEve() {
-      console.log("l")
-    },
-    testObjFun(){
-      this.proObj.test()
     }
   }
 }
@@ -103,7 +95,7 @@ export default {
   background-color: red;
 }
 #t1 {
-    height: 200px;
-    background-color: pink;
+  height: 200px;
+  background-color: pink;
 }
 </style>

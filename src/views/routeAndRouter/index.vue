@@ -32,7 +32,7 @@ export default {
     next()
   },
   methods: {
-    toWhere() {
+    toWhere(event) {
       const name = event.target.getAttribute("name")
       //   console.log(event.target.getAttribute("name"))
       this.$router.push(`/routeAndRouter/${name}`)
