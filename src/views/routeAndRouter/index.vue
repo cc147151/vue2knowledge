@@ -11,7 +11,7 @@
         <p @click="toTwo">去two路由</p>
       </div>
       <div class="h500" @click="toRender">
-        测试滚动
+        锚点方式去render页面，如不需锚点，在path:"/render#t1"去掉#t1
       </div>
     </div>
     <div class="right">
