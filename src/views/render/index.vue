@@ -1,6 +1,9 @@
 <template>
   <div class="renderBox">
     <Nav />
+    <div v-for="(item, index) in comArr" :key="index">
+      <span @click="changeItem(item)">{{ item.name }}</span>
+    </div>
     <div class="render">
       <h3>视图是否重新进行渲染，以函数调用方法测试{{ logFun() }}</h3>
       <p>
@@ -63,7 +66,13 @@ export default {
         age: "99"
       },
       obj: {},
-      proObj: {}
+      proObj: {},
+      arr: [{ name: "sjy1" }, { name: "sjy2" }]
+    }
+  },
+  computed: {
+    comArr() {
+      return this.arr
     }
   },
   components: {},
@@ -82,6 +91,15 @@ export default {
     changeObj() {
       this.obj.b = "b"
       //   this.$forceUpdate()
+    },
+    async changeItem(item) {
+        let res = await new Promise(resolve=>{
+            setTimeout(()=>{
+                resolve('mm')
+            },3000)
+        })
+      console.log("ss",res)
+      item.name = "ddd"
     }
   }
 }
