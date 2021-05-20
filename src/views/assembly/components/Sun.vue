@@ -7,8 +7,7 @@
       <van-button type="primary" @click="changeFun"
         >点我修改父组件和爷组件的值</van-button
       >
-    <h2>用inject不会更新视图,非响应式：{{  sunAge }}</h2>
-
+      <h2>用inject不会更新视图,非响应式：{{ sunAge }}</h2>
     </div>
   </div>
 </template>
@@ -22,7 +21,6 @@ export default {
     seeDataFun() {
       console.log(this.$attrs, "Sunattrs")
       console.log(this.$listeners, "Sunlisteners")
-
     },
     changeFun() {
       this.$emit("giveSunFun", "sunData", this.$attrs.sunData + 1)

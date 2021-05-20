@@ -11,7 +11,8 @@ const dataArr = [
   { title: "边界情况", name: "Boundary" },
   { title: "vue-router", name: "RouteAndRouter/one/1" },
   { title: "scroll-router", name: "ScrollRouter/anchor" },
-  { title: "vuex", name: "VuexPage" }
+  { title: "vuex", name: "VuexPage" },
+  { title: "v-model", name: "Input" }
 ]
 // console.log(router.options.routes)
 // router.options.routes

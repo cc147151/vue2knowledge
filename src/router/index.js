@@ -19,6 +19,7 @@ const Two = () => import("../views/routeAndRouter/secondRouter/two.vue")
 const ScrollRouter = () => import("../views/scrollRouter")
 const Anchor = () => import("../views/scrollRouter/anchor")
 const VuexPage = () => import("../views/vuex/index.vue")
+const Input = () => import("../views/Input/index.vue")
 Vue.use(VueRouter)
 const routes = [
   {
@@ -110,6 +111,11 @@ const routes = [
     path: "/vuexPage",
     name: "VuexPage",
     component: VuexPage
+  },
+  {
+    path: "/input",
+    name: "Input",
+    component: Input
   }
 ]
 const fun = function(savedPosition, to) {
