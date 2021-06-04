@@ -20,6 +20,7 @@ const ScrollRouter = () => import("../views/scrollRouter")
 const Anchor = () => import("../views/scrollRouter/anchor")
 const VuexPage = () => import("../views/vuex/index.vue")
 const Input = () => import("../views/Input/index.vue")
+const FormPage = () => import("../views/formPage/index.vue")
 Vue.use(VueRouter)
 const routes = [
   {
@@ -116,6 +117,11 @@ const routes = [
     path: "/input",
     name: "Input",
     component: Input
+  },
+  {
+    path: "/formPage",
+    name: "FormPage",
+    component: FormPage
   }
 ]
 const fun = function(savedPosition, to) {
