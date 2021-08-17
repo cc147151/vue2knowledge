@@ -1,5 +1,6 @@
 <template>
   <div class="index">
+    <button @click="toWei">去小程序</button>
     <van-cell-group :border="false">
       <van-cell
         is-link
@@ -14,7 +15,6 @@
         </template>
       </van-cell>
     </van-cell-group>
-    
   </div>
 </template>
 <script>
@@ -30,7 +30,11 @@ export default {
     }
   },
   created() {},
-  methods: {}
+  methods: {
+    toWei() {
+      window.location.href = "weixin://dl/business/?t=YKzsGWV7XVj"
+    }
+  }
 }
 </script>
 <style>
