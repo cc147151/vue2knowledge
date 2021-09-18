@@ -41,4 +41,7 @@ export default {
 .ml {
   margin-left: 15px;
 }
+button {
+  color: blue;
+}
 </style>

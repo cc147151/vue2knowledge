@@ -1,5 +1,6 @@
 <template>
   <div class="vuex">
+    <button>测试</button>
     <p @click="test">
       全局是{{ defaultName }},我的名字是{{ name }},我的年龄是{{
         age
@@ -84,7 +85,10 @@ export default {
     }),
     commitLike() {
       // 默认情况下，模块内部的 action、mutation 和 getter 是注册在全局命名空间的——这样使得多个模块能够对同一 mutation 或 action 作出响应。
-      //   this.$store.commit("changeLikeType", { type: "drink", value: ["哇哈哈"] })
+      this.$store.commit("like/changeLikeType", {
+        type: "drink",
+        value: ["哇哈哈"]
+      })
       console.log(222)
     },
     async test() {
@@ -97,7 +101,8 @@ export default {
       console.log("end")
     },
     changeUser() {
-      this.changeUserInfoType({ type: "age", value: "88" })
+      let value = this.age - 0 + 1
+      this.changeUserInfoType({ type: "age", value })
     },
     async changeActions() {
       let res = await this.userActions()
@@ -107,3 +112,8 @@ export default {
   }
 }
 </script>
+<style>
+button {
+  color: red;
+}
+</style>

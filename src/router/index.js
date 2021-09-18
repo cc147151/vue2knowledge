@@ -1,5 +1,6 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
+// import Index from "../views"
 const Index = () => import("../views")
 const Filter = () => import("../views/filter")
 const Life = () => import("../views/life")
@@ -19,6 +20,7 @@ const Two = () => import("../views/routeAndRouter/secondRouter/two.vue")
 const ScrollRouter = () => import("../views/scrollRouter")
 const Anchor = () => import("../views/scrollRouter/anchor")
 const VuexPage = () => import("../views/vuex/index.vue")
+// import VuexPage from "../views/vuex/index.vue"
 const Input = () => import("../views/Input/index.vue")
 const FormPage = () => import("../views/formPage/index.vue")
 Vue.use(VueRouter)

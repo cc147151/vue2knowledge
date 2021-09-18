@@ -1,7 +1,7 @@
 const pro = () => {
   return new Promise(resolve => {
     setTimeout(() => {
-      resolve({ code: "200", data: ['跑步'] })
+      resolve({ code: "200", data: ["打球"] })
     }, 3000)
   })
 }
@@ -13,7 +13,7 @@ export default {
     school1: 5,
     school2: 3,
     school3: 3,
-    dataArr: []
+    dataArr: ["跑步"]
   },
   getters: {
     allSchool(state) {
@@ -26,8 +26,8 @@ export default {
     }
   },
   actions: {
-    async userActions({ commit },payload) {
-        console.log(payload)
+    async userActions({ commit }, payload) {
+      console.log(payload)
       let res = await pro()
       if (res.code === "200") {
         commit("changeUserInfoType", { type: "dataArr", value: res.data })
