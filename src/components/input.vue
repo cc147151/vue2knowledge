@@ -9,6 +9,8 @@ export default {
   methods: {
     changeInput($event, cc) {
       console.log($event, cc)
+      this.$emit("update:value", $event.target.value)
+      //   针对v-model
       this.$emit("input", $event.target.value)
     }
   }

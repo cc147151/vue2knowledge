@@ -1,7 +1,10 @@
 <template>
   <div>
+    <InputCom :value.sync="value" />
+    采用.sync{{ value }}
+
     <InputCom v-model="value" />
-    {{ value }}
+    采用v-model---{{ value }}
   </div>
 </template>
 <script>
