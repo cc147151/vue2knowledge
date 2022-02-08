@@ -3,9 +3,9 @@
     <p>
       默认watch无法深度监听对象深度改变,需要开启deep，开启deep之后，无法取到旧值，需要配合computed使用
     </p>
-    <van-button @click="changeObj">测试对象</van-button>
+    <van-button type="primary" @click="changeObj">测试对象</van-button>
     <div>
-      <van-button @click="changeArrObj"> 测试数组对象{{ arrObj }}</van-button>
+      <van-button type="primary" @click="changeArrObj"> 测试数组对象{{ arrObj }}</van-button>
     </div>
     <div>
       <van-button @click="changeArr"> 测试数组{{ arr }}</van-button>

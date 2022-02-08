@@ -4,6 +4,8 @@ import router from "./router"
 import store from "./store"
 import upperFirst from "lodash/upperFirst"
 import camelCase from "lodash/camelCase"
+// import testSky from "test-sky"
+// Vue.use(testSky)
 Vue.config.productionTip = false
 import { Button } from "vant"
 Vue.use(Button)
@@ -33,7 +35,6 @@ Vue.filter("getFormalTime", function(time) {
   console.log(`${y}-${mon}-${d} ${h}${m}${s}`)
   return `${y}-${mon}-${d} ${h}${m}${s}`
 })
-
 
 // 基础组件的自动化全局注册
 const requireComponent = require.context(
@@ -73,18 +74,17 @@ requireComponent.keys().forEach(fileName => {
   )
 })
 
-
 new Vue({
   router,
   store,
-  data(){
-    return{
-      root:'root'
+  data() {
+    return {
+      root: "root"
     }
   },
-  mounted(){
+  mounted() {
     console.log(this.$options.testRoot)
   },
-  testRoot:{test:'ok'},
+  testRoot: { test: "ok" },
   render: h => h(App)
 }).$mount("#app")

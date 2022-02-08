@@ -6,23 +6,25 @@
 <script>
 export default {
   beforeCreate() {
-    console.log("app-beforeCreate")
+    // console.log("app-beforeCreate")
+    // var cc = 1
+    // console.log(cc)
     // console.log(this.$route);
   },
   created() {
-    console.log("app-created")
+    // console.log("app-created")
   },
   beforeMount() {
-    console.log("app-beforeMount")
+    // console.log("app-beforeMount")
   },
   mounted() {
-    console.log("app-mounted")
+    // console.log("app-mounted")
   },
   beforeDestroy() {
-    console.log("app-beforeDestroy")
+    // console.log("app-beforeDestroy")
   },
   destroyed() {
-    console.log("app-destroyed")
+    // console.log("app-destroyed")
   },
   methods: {
     toAbout() {

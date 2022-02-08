@@ -4,6 +4,7 @@
     <div v-for="(item, index) in comArr" :key="index">
       <span @click="changeItem(item)">{{ item.name }}</span>
     </div>
+    <Test :test="'wahh'" />
     <div class="render">
       <h3>视图是否重新进行渲染，以函数调用方法测试{{ logFun() }}</h3>
       <p>
@@ -53,11 +54,15 @@
   </div>
 </template>
 <script>
+import Test from "./test.jsx"
 import Vue from "vue"
 import { Button } from "vant"
 Vue.use(Button)
 // 测试 视图渲染的几种情况 页面组件和子组件
 export default {
+  components: {
+    Test
+  },
   data() {
     return {
       name: "0.0",
@@ -67,7 +72,8 @@ export default {
       },
       obj: {},
       proObj: {},
-      arr: [{ name: "sjy1" }, { name: "sjy2" }]
+      arr: [{ name: "sjy1" }, { name: "sjy2" }],
+      dd: 0
     }
   },
   computed: {
@@ -75,7 +81,6 @@ export default {
       return this.arr
     }
   },
-  components: {},
   created() {
     console.log(this.$route)
     // created里同步代码还可以更新视图
@@ -93,12 +98,12 @@ export default {
       //   this.$forceUpdate()
     },
     async changeItem(item) {
-        let res = await new Promise(resolve=>{
-            setTimeout(()=>{
-                resolve('mm')
-            },3000)
-        })
-      console.log("ss",res)
+      let res = await new Promise(resolve => {
+        setTimeout(() => {
+          resolve("mm")
+        }, 3000)
+      })
+      console.log("ss", res)
       item.name = "ddd"
     }
   }

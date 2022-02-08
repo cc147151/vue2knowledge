@@ -19,7 +19,7 @@ const Two = () => import("../views/routeAndRouter/secondRouter/two.vue")
 const ScrollRouter = () => import("../views/scrollRouter")
 const Anchor = () => import("../views/scrollRouter/anchor")
 const VuexPage = () => import("../views/vuex/index.vue")
-const Input = () => import("../views/Input/index.vue")
+const Input = () => import("../views/Input/index.js")
 Vue.use(VueRouter)
 const routes = [
   {
