@@ -34,16 +34,6 @@
         @click="user = { name: '哈哈哈', age: '99' }"
         >{{ user.age }}</van-button
       >
-      <p>
-        4.如果我修改的是data的某一个属性，这个属性不是对象，修改为原来的一样，则是不会重新渲染的
-      </p>
-      <p>
-        5.可以利用this.$forceUpdate()迫使视图重新渲染
-      </p>
-      {{ obj }}
-    </div>
-    <div @click="changeObj">
-      测试obj
     </div>
     <div class="h500">
       测试滚动
@@ -81,21 +71,12 @@ export default {
       return this.arr
     }
   },
-  created() {
-    console.log(this.$route)
-    // created里同步代码还可以更新视图
-    // this.obj.a='a'
-  },
   methods: {
     logFun() {
       console.log("渲染了")
     },
     changeName() {
       this.name = "0.01"
-    },
-    changeObj() {
-      this.obj.b = "b"
-      //   this.$forceUpdate()
     },
     async changeItem(item) {
       let res = await new Promise(resolve => {

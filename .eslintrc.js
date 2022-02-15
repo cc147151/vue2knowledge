@@ -8,7 +8,7 @@ module.exports = {
     parser: "babel-eslint"
   },
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "warn",
+    // "no-console": process.env.NODE_ENV === "production" ? "warn" : "warn",
     "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
     "no-var":2,
     'semi': [2, 'never'], // 不使用分号

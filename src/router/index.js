@@ -2,7 +2,6 @@ import Vue from "vue"
 import VueRouter from "vue-router"
 // import Index from "../views"
 const Index = () => import("../views")
-const Filter = () => import("../views/filter")
 const Life = () => import("../views/life")
 const Render = () => import("../views/render")
 const Computed = () => import("../views/computed")
@@ -23,33 +22,32 @@ const VuexPage = () => import("../views/vuex/index.vue")
 const Input = () => import("../views/Input/index.js")
 const FormPage = () => import("../views/formPage/index.vue")
 Vue.use(VueRouter)
-const routes = [
+export const routes = [
   {
     path: "/",
     name: "Index",
     component: Index
   },
   {
-    path: "/filter",
-    name: "Filter",
-    component: Filter
-  },
-  {
     path: "/life",
     name: "Life",
+    title: "父子mixins生命周期",
     component: Life
   },
   {
     path: "/render",
     name: "Render",
+    title: "render渲染",
     component: Render
   },
   {
     path: "/computed",
     name: "Computed",
+    title: "computed",
+    redirect:'/computed/style',
     component: Computed,
     children: [
-      { path: "", component: Style },
+    //   { path: "", component: Style },
       { path: "style", name: "Style", component: Style },
       { path: "subComponents", name: "SubComponents", component: SubComponents }
     ]
@@ -57,31 +55,37 @@ const routes = [
   {
     path: "/watch",
     name: "Watch",
+    title: "watch",
     component: Watch
   },
   {
     path: "/ifAndShow",
     name: "IfAndShow",
+    title: "v-if and v-show",
     component: IfAndShow
   },
   {
     path: "/assembly",
     name: "Assembly",
+    title: "深入组件",
     component: Assembly
   },
   {
     path: "/slot",
     name: "Slot",
+    title: "插槽",
     component: Slot
   },
   {
     path: "/boundary",
     name: "Boundary",
+    title: "边界情况",
     component: Boundary
   },
   {
     path: "/routeAndRouter",
     name: "RouteAndRouter",
+    title: "vue-router",
     component: RouteAndRouter,
     children: [
       {
@@ -101,6 +105,7 @@ const routes = [
   {
     path: "/scrollRouter",
     name: "ScrollRouter",
+    title: "scroll-router",
     component: ScrollRouter,
     children: [
       {
@@ -112,11 +117,13 @@ const routes = [
   {
     path: "/vuexPage",
     name: "VuexPage",
+    title: "vuex",
     component: VuexPage
   },
   {
     path: "/input",
     name: "Input",
+    title: "v-model",
     component: Input
   },
   {

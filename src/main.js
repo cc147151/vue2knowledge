@@ -9,32 +9,6 @@ import camelCase from "lodash/camelCase"
 Vue.config.productionTip = false
 import { Button } from "vant"
 Vue.use(Button)
-function timestampToTime(timestamp) {
-  let date = new Date(timestamp) //时间戳为10位需*1000，时间戳为13位的话不需乘1000.传进来之前做处理
-  let y = date.getFullYear()
-  let mon =
-    date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1
-  let d = date.getDate() < 10 ? "0" + date.getDate() : date.getDate()
-  let h = (date.getHours() < 10 ? "0" + date.getHours() : date.getHours()) + ":"
-  let m =
-    (date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()) + ":"
-  let s = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds()
-  return {
-    y,
-    mon,
-    d,
-    h,
-    m,
-    s
-  }
-}
-Vue.filter("getFormalTime", function(time) {
-  console.log(time)
-  if (!time) return ""
-  let { y, mon, d, h, m, s } = timestampToTime(time * 1000)
-  console.log(`${y}-${mon}-${d} ${h}${m}${s}`)
-  return `${y}-${mon}-${d} ${h}${m}${s}`
-})
 
 // 基础组件的自动化全局注册
 const requireComponent = require.context(
@@ -46,7 +20,7 @@ const requireComponent = require.context(
   //   /.vue$/
   /[A-Z]\w+\.(vue|js)$/
 )
-console.log(requireComponent.keys())
+// console.log(requireComponent.keys())
 
 requireComponent.keys().forEach(fileName => {
   // 获取组件配置
@@ -64,7 +38,7 @@ requireComponent.keys().forEach(fileName => {
   )
 
   // 全局注册组件
-  console.log(componentName)
+//   console.log(componentName)
   Vue.component(
     componentName,
     // 如果这个组件选项是通过 `export default` 导出的，
@@ -83,7 +57,7 @@ new Vue({
     }
   },
   mounted() {
-    console.log(this.$options.testRoot)
+    // console.log(this.$options.testRoot)
   },
   testRoot: { test: "ok" },
   render: h => h(App)

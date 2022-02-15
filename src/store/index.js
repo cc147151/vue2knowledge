@@ -10,7 +10,7 @@ const dataState = createPersistedState({
   storage: {
     getItem: key => localStorage.getItem(key),
     setItem: (key, value) => {
-      console.log(key + "//" + value, "--------------")
+    //   console.log(key + "//" + value, "--------------")
       return localStorage.setItem(key, value)
     },
     removeItem: key => localStorage.removeItem(key)

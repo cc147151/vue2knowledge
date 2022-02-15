@@ -1,6 +1,5 @@
 // import router from "@/router/index"
 const dataArr = [
-  { title: "filter的测试", name: "Filter" },
   { title: "父子mixins生命周期", name: "Life" },
   { title: "render渲染", name: "Render" },
   { title: "computed", name: "Computed" },

@@ -3,11 +3,11 @@
     <Nav @leftEvent="myBack" />
     <router-view :key="key"></router-view>
     <div class="fix" @click="e => toSecond(e, '哇哈哈')">
-        <h3>给router-view添加一个key,</h3>
-      <p path="/computed/style" data-hhh="hhhhhhh" @click="toWhere('Style')">
+      <h3>给router-view添加一个key,</h3>
+      <p path="/computed/style" data-hhh="hhhhhhh">
         1.于样式结合
       </p>
-      <p path="/computed/subComponents" @click="toWhere('SubComponents')">
+      <p path="/computed/subComponents">
         2.于子组件结合
       </p>
       <testComponent />
@@ -22,23 +22,20 @@ export default {
   data() {
     return {}
   },
-computed: {
-  key() {
-      console.log(this.$route.path)
-    // 只要保证 key 唯一性就可以了，保证不同页面的 key 不相同
-    return this.$route.fullPath
-  }
- },
+  computed: {
+    key() {
+      console.log(this.$route.fullPath)
+      // 只要保证 key 唯一性就可以了，保证不同页面的 key 不相同
+      return this.$route.fullPath
+    }
+  },
   methods: {
-    toSecond() {
-      //   console.log(arg)
-      //   console.log(e.target.dataset.hhh)
-      //   console.log(e.target.getAttribute("path"))
-      //   const path = e.target.getAttribute("path")
-      //   path && this.$router.push(path)
-    },
-    toWhere(todo) {
-      this.$router.push({ name: todo })
+    toSecond(e, ...arg) {
+      console.log(...arg)
+      console.log(e.target.dataset.hhh)
+      console.log(e.target.getAttribute("path"))
+      const path = e.target.getAttribute("path")
+      path && this.$router.push(path)
     },
     myBack() {
       history.go(-1)

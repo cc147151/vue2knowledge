@@ -22,7 +22,7 @@
     <van-cell-group :border="false">
       <van-cell
         is-link
-        v-for="(item, index) in dataArr"
+        v-for="(item, index) in routesArr"
         :key="index"
         :to="item.name"
       >
@@ -42,23 +42,26 @@ import { SkyButton } from "test-sky"
 Vue.use(SkyButton)
 Vue.use(Cell)
 Vue.use(CellGroup)
-console.log(SkyButton)
+// console.log(SkyButton)
 import swiperTest from "/public/swiper.js"
-import dataArr from "@/utils/data"
+import { routes } from "@/router/index.js"
 export default {
   data() {
-    return {
-      dataArr
+    return {}
+  },
+  computed: {
+    routesArr() {
+      return routes.filter(item => item.title)
     }
   },
   mounted() {
-    const swiperTest1 = new swiperTest(".swiper-container", {
+    new swiperTest(".swiper-container", {
       navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev"
       }
     })
-    console.dir(swiperTest1)
+    // console.dir(swiperTest1)
   },
   methods: {
     toWei() {
