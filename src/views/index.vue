@@ -1,23 +1,7 @@
 <template>
   <div class="index">
     <SkyButton>册俄式 </SkyButton>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide">Slide 1</div>
-        <div class="swiper-slide">Slide 2</div>
-        <div class="swiper-slide">Slide 3</div>
-        <div class="swiper-slide">Slide 4</div>
-        <div class="swiper-slide">Slide 5</div>
-        <div class="swiper-slide">Slide 6</div>
-        <div class="swiper-slide">Slide 7</div>
-        <div class="swiper-slide">Slide 8</div>
-        <div class="swiper-slide">Slide 9</div>
-        <div class="swiper-slide">Slide 10</div>
-      </div>
-      <!-- Add Arrows -->
-      <div class="swiper-button-next"></div>
-      <div class="swiper-button-prev"></div>
-    </div>
+
     <button @click="toWei">去小程序</button>
     <van-cell-group :border="false">
       <van-cell
@@ -43,7 +27,7 @@ Vue.use(SkyButton)
 Vue.use(Cell)
 Vue.use(CellGroup)
 // console.log(SkyButton)
-import swiperTest from "/public/swiper.js"
+
 import { routes } from "@/router/index.js"
 export default {
   data() {
@@ -54,15 +38,7 @@ export default {
       return routes.filter(item => item.title)
     }
   },
-  mounted() {
-    new swiperTest(".swiper-container", {
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev"
-      }
-    })
-    // console.dir(swiperTest1)
-  },
+
   methods: {
     toWei() {
       window.location.href = "weixin://dl/business/?t=YKzsGWV7XVj"

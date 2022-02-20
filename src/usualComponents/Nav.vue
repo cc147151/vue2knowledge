@@ -5,6 +5,7 @@
       left-text="返回"
       left-arrow
       @click-left="onClickLeft"
+      v-bind="$attrs"
     />
   </div>
 </template>
@@ -34,7 +35,7 @@ export default {
         this.$emit("leftEvent")
         return
       }
-      console.log('back')
+      console.log("back")
       this.$router.back()
     }
   }

@@ -2,6 +2,7 @@ import Vue from "vue"
 import VueRouter from "vue-router"
 // import Index from "../views"
 const Index = () => import("../views")
+const SwierPage = () => import("../views/swiperPage")
 const Life = () => import("../views/life")
 const Render = () => import("../views/render")
 const Computed = () => import("../views/computed")
@@ -29,6 +30,12 @@ export const routes = [
     component: Index
   },
   {
+    path: "/swierPage",
+    name: "SwierPage",
+    title: "swiper",
+    component: SwierPage
+  },
+  {
     path: "/life",
     name: "Life",
     title: "父子mixins生命周期",
@@ -44,10 +51,10 @@ export const routes = [
     path: "/computed",
     name: "Computed",
     title: "computed",
-    redirect:'/computed/style',
+    redirect: "/computed/style",
     component: Computed,
     children: [
-    //   { path: "", component: Style },
+      //   { path: "", component: Style },
       { path: "style", name: "Style", component: Style },
       { path: "subComponents", name: "SubComponents", component: SubComponents }
     ]
