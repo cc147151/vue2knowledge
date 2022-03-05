@@ -1,6 +1,7 @@
 <template>
   <div>
-    <InputCom :value.sync="value" />
+    <InputCom :value.sync="value" v-bind.sync="doc" />
+    <h3>多个值:v-bind.sync="doc" {{ doc }}</h3>
     采用.sync{{ value }}
 
     <InputCom v-model="value" />
@@ -8,7 +9,7 @@
   </div>
 </template>
 <script>
-import InputCom from "@/components/input.vue"
+import InputCom from "./components/input.vue"
 export default {
   name: "Input",
   components: {
@@ -16,7 +17,11 @@ export default {
   },
   data() {
     return {
-      value: ""
+      value: "",
+      doc: {
+        name: "sss",
+        age: "99"
+      }
     }
   }
 }

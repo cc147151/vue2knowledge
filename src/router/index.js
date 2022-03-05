@@ -20,7 +20,8 @@ const Two = () => import("../views/routeAndRouter/secondRouter/two.vue")
 const ScrollRouter = () => import("../views/scrollRouter")
 const Anchor = () => import("../views/scrollRouter/anchor")
 const VuexPage = () => import("../views/vuex/index.vue")
-const Input = () => import("../views/Input/index.js")
+const Input = () => import("../views/Input/index.vue")
+const JSX = () => import("../views/jsx/index.js")
 const FormPage = () => import("../views/formPage/index.vue")
 Vue.use(VueRouter)
 export const routes = [
@@ -132,6 +133,12 @@ export const routes = [
     name: "Input",
     title: "v-model",
     component: Input
+  },
+  {
+    path: "/jsx",
+    name: "JSX",
+    title: "jsx",
+    component: JSX
   },
   {
     path: "/formPage",

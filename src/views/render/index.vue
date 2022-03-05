@@ -1,10 +1,12 @@
 <template>
   <div class="renderBox">
     <Nav />
-    <div v-for="(item, index) in comArr" :key="index">
-      <span @click="changeItem(item)">{{ item.name }}</span>
-    </div>
     <Test :test="'wahh'" />
+    {{ obj.a }}
+    <div v-for="item in timeArr" :key="item.id">
+      {{ item.id }}<button @click="deleteRow(item)">删除</button>
+    </div>
+    <button @click="timeArr.push({ id: Date.now() })">push</button>
     <div class="render">
       <h3>视图是否重新进行渲染，以函数调用方法测试{{ logFun() }}</h3>
       <p>
@@ -61,15 +63,17 @@ export default {
         age: "99"
       },
       obj: {},
-      proObj: {},
       arr: [{ name: "sjy1" }, { name: "sjy2" }],
-      dd: 0
+      timeArr: [{ id: Date.now() }]
     }
   },
   computed: {
     comArr() {
       return this.arr
     }
+  },
+  created() {
+    this.obj = { a: "aaa" }
   },
   methods: {
     logFun() {
@@ -86,6 +90,11 @@ export default {
       })
       console.log("ss", res)
       item.name = "ddd"
+    },
+    deleteRow(item) {
+      console.log(this.timeArr.find(itemT => itemT == item))
+      console.log(item)
+      console.log(this.timeArr.indexOf(item))
     }
   }
 }

@@ -1,6 +1,9 @@
 <template>
   <div>
     <input type="text" :value="newName" @input="changeInput($event, 'hhh')" />
+    <van-button @click="changePro">
+      修改父组件对象的值
+    </van-button>
   </div>
 </template>
 <script>
@@ -16,6 +19,9 @@ export default {
       this.$emit("update:value", $event.target.value)
       //   针对v-model 默认是input
       this.$emit("newEvent", $event.target.value)
+    },
+    changePro() {
+      this.$emit("update:name", "哇哈哈")
     }
   }
 }

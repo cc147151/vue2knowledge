@@ -3,17 +3,14 @@ export default {
   data() {
     return {
       name: "sjy",
-      age: "22",
       value: ""
     }
   },
   methods: {
-    test() {
-      this.age = "33"
-    }
+    test() {}
   },
-  render(props) {
-    console.log(props.children)
+  render(h, context) {
+    console.log(context)
     console.log("执行")
     return (
       <div>
@@ -24,6 +21,9 @@ export default {
           scopedSlots={{
             cc: props => {
               return <div>{props.text}</div>
+            },
+            default: props => {
+              return <div>default</div>
             }
           }}
         />
